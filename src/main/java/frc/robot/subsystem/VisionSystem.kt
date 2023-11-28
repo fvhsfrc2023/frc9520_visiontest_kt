@@ -17,7 +17,7 @@ object VisionSystem: SubsystemBase() {
 
     )
 
-    val currentPower: Double get() {
+    val suggestedPower: Double get() {
         for (range in ranges) {
             if (ty in range.minD..range.maxD)
                 return range.power
