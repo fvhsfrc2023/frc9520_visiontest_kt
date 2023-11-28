@@ -1,10 +1,10 @@
 package frc.robot
 
 import edu.wpi.first.wpilibj.TimedRobot
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard
 import edu.wpi.first.wpilibj2.command.CommandScheduler
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup
+import frc.robot.command.VisionCommand
 
 /**
  * The VM is configured to automatically run this object (which basically functions as a singleton class),
@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj2.command.ParallelCommandGroup
  */
 object Robot : TimedRobot()
 {
-    private val teleopCommands = ParallelCommandGroup()
+    private val teleopCommands = ParallelCommandGroup(VisionCommand)
 
     override fun robotPeriodic() {
         CommandScheduler.getInstance().run()
